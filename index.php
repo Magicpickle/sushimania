@@ -25,6 +25,9 @@
                     <button>
                         <a href="order.php">ORDER</a>
                     </button>
+                    <button>
+                        <a href="order.php">ORDER</a>
+                    </button>
                 </ul>
             </nav>
         </header>
