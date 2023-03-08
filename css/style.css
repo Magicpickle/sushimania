@@ -5,6 +5,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  font-weight: 600;
 }
 
 body {
@@ -14,41 +15,55 @@ body {
   flex-direction: column;
   justify-content: space-between;
   overflow-x: hidden;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 .background {
-  background-image: url("../img/background.jpg");
-  background-size: cover;
+  background-image: url("../img/sushi1.jpg");
+  background-size:cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
+  opacity: 0.8;
 }
 header {
   height: 10rem;
   display: flex;
   align-items: center;
 }
+nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;  
+  align-items: center;
+}
 .logo-img {
   padding: 0.5rem;
-  height: 100%;
-  display: flex;
+  height: 150px;
+  position: absolute;
+  left: 0;
 }
 .logo-img img {
   height: 100%;
 }
-ul{
-    display: flex;
-    gap: 1em;
-    align-items: baseline;
-    font-size: bold;
+ul {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  font-size: bold;
+  justify-self: center;
 }
-ul button{
-   height: 45px;
-   width: 120px;
-   border-radius: 10px;
-   border: none;
-   background-color: #e74543;
-   font-size: bold;
+ul button {
+  height: 45px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e74543;
+  font-size: bold;
+  cursor: pointer;
+}
+.login{
+  position: absolute;
+  right: 2.5vw;
 }
 
 footer {
