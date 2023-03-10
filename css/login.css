@@ -5,6 +5,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  font-weight: 600;
 }
 
 body {
@@ -15,15 +16,17 @@ body {
   justify-content: space-between;
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
+  /* filter: blur(5px); */
 }
 
 .background {
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/sushi1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  position: relative;
-  z-index: -1;
+  height: 90vh;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
 }
 header {
   height: 10rem;
@@ -32,13 +35,15 @@ header {
 }
 nav {
   display: flex;
-  justify-content: space-between;
   flex-grow: 1;
+  justify-content: center;
+  align-items: center;
 }
 .logo-img {
   padding: 0.5rem;
-  height: 100%;
-  display: flex;
+  height: 150px;
+  position: absolute;
+  left: 0;
 }
 .logo-img img {
   height: 100%;
@@ -46,8 +51,9 @@ nav {
 ul {
   display: flex;
   gap: 1em;
-  align-items: baseline;
+  align-items: center;
   font-size: bold;
+  justify-self: center;
 }
 ul button {
   height: 45px;
@@ -57,6 +63,32 @@ ul button {
   background-color: #e74543;
   font-size: bold;
   cursor: pointer;
+}
+/* .login{
+  position: absolute;
+  right: 2.5vw;
+} */
+g > * {
+  fill: var(white);
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-text h1 {
+  font-size: 4em;
+}
+.box-text h2 {
+  font-size: 1em;
+}
+
+footer {
+  justify-self: flex-end;
+  background-color: grey;
+  height: 150px;
+  width: 100vw;
 }
 
 form input[name="username"],
@@ -71,8 +103,8 @@ input[name="submit"] {
   border: none transparent;
   outline: none;
 }
-input[name="submit"]{
-    width: 100%;
+input[name="submit"] {
+  width: 100%;
 }
 input[name="submit"]:hover {
   opacity: 0.75;
@@ -89,6 +121,6 @@ form {
   justify-content: space-between;
 }
 .box1 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

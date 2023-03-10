@@ -30,8 +30,10 @@
                 </div>
             </nav>
         </header>
-        <h1>A True Taste of Japanese Cuisine</h1>
-        <h2>Made fresh when you order.</h2>
+        <div class="box-text">
+            <h1>A True Taste of Japanese Cuisine</h1>
+            <h2>Made fresh when you order.</h2>
+        </div>
     </div>
 
     <div class="discounts">

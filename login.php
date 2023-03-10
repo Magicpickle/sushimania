@@ -39,8 +39,15 @@
     </form>
 </body>
 <?php
-    require_once 'pages/conn.php'
+    require_once 'pages/conn.php';
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "INSERT INTO users(username, password) VALUES ('$username .' , ' . $password.')";
+
+    $conn->exec($sql);
+    echo $username . " " . $password;
 ?>
 
 </html>
