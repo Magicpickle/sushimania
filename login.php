@@ -12,9 +12,9 @@
 <body>
     <div class="background">
         <header>
-            <div class="logo-img header">
+            <a class="logo-img header" href="index.php">
                 <img src="img/Sushi-Logo.png" alt="">
-            </div>
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.php">HOME</a></li>
@@ -26,28 +26,53 @@
                     </a>
                 </ul>
             </nav>
+
         </header>
+        <div class="box-text">
+            <h1>A True Taste of Japanese Cuisine</h1>
+            <h2>Made fresh when you order.</h2>
+        </div>
     </div>
     <form name="login" action="login.php" method="post">
         <div class="box box0 ">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="username" placeholder="Username" require_once>
+            <input type="password" name="password" id="password" placeholder="Password" require_once>
+
         </div>
         <div class="box box1">
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="submit" value="submit" require_once>
         </div>
+        <input type="checkbox" id="check" onclick="myFunction()">
+        <p>Show password</p>
     </form>
 </body>
 <?php
     require_once 'pages/conn.php';
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    if(isset($_POST['submit'])){
+       $username = $_POST['username'];
+       $password = $_POST['password'];
+        $data = [
+            'username' => $username,
+            'password' => $password,
+        ];
 
-    $sql = "INSERT INTO users(username, password) VALUES ('$username .' , ' . $password.')";
-
-    $conn->exec($sql);
-    echo $username . " " . $password;
+        $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        $stmt= $conn->prepare($sql);
+        $stmt->execute($data);
+         echo $username . " " . $password;
+    }
 ?>
+<script>
+function myFunction() {
+    const x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+        console.log("shit")
+    } else {
+        x.type = "password";
+    }
+}
+</script>
 
 </html>
