@@ -68,11 +68,16 @@ ul button {
   position: absolute;
   right: 2.5vw;
 }
+.user-svg {
+  height: 50px;
+  fill: white;
+}
 
 .box-text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 .box-text h1 {
   font-size: 4em;

@@ -16,7 +16,6 @@ body {
   justify-content: space-between;
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
-  /* filter: blur(5px); */
 }
 
 .background {
@@ -75,43 +74,80 @@ ul button {
   font-size: 1em;
 }
 
-footer {
-  justify-self: flex-end;
-  background-color: grey;
-  height: 150px;
-  width: 100vw;
+.box-form-login-register {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
 }
-
+.box-form-login {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 0.5rem;
+  align-items: center;
+}
 form input[name="username"],
-input[id="password"],
+input[name="password"],
 input[name="submit"] {
   height: 30px;
-  width: 45%;
+  width: 100%;
   padding: 3px;
   border-radius: 10px;
   color: black;
   box-sizing: border-box;
   border: none transparent;
   outline: none;
-}
-input[name="submit"] {
-  width: 100%;
+  transition: 0.5s ease-in-out;
 }
 input[name="submit"]:hover {
-  opacity: 0.75;
+  background-color: #e74543;
   cursor: pointer;
+  color: white;
 }
-form {
+.box-checkbox {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #e74543;
+}
+.register {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  width: 240px;
-  gap: 0.5rem;
+  align-items: center;
 }
-.box {
-  display: flex;
-  justify-content: space-between;
+.register input[name="register"] {
+  height: 30px;
+  width: 100%;
+  padding: 3px;
+  border-radius: 10px;
+  color: black;
+  box-sizing: border-box;
+  border: none transparent;
+  outline: none;
+  transition: 0.5s ease-in-out;
 }
-.box1 {
-  display: flex;
-  justify-content: center;
+input[name="register"]:hover {
+  background-color: #e74543;
+  cursor: pointer;
+  color: white;
+}
+
+footer {
+  justify-self: flex-end;
+  background-color: grey;
+  height: 150px;
+  width: 100vw;
 }
