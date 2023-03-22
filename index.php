@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <div class="background">
         <header>
             <nav>
@@ -50,7 +51,37 @@
     </div>
 
     <div class="discounts">
+        <div class="text-box-discounts">
+            <h1>DISCOUNTS</h1>
+            <h2>for this week</h2>
+        </div>
+        <p class="text-discounts">*Login to get your discount</p>
+        <div class="blackbox">
+            <div class="item1 items">
+                <div class="img">
+                    <img src="img/item-1-img.jpg" alt="">
+                </div>
+                <p>SALMON NIGIRI</p>
+            </div>
+            <div class="item2 items">
+                <div class="img">
+                    <img src="img/item-2-img.jpg" alt="">
+                </div>
+                <p>CUCUMBER HOSOMAKI</p>
+            </div>
+            <div class="item3 items">
+                <div class="img">
+                    <img src="img/item-3-img.jpg" alt="">
+                </div>
+                <p>PUMPKIN CROQUETTES (3 PCS)</p>
+            </div>
+            <form name="discount" action="index.php" method="post">
+                <input type="checkbox" name="checkDiscount" value="false" />
+                <input type="submit" name="form-submit" value="Submit" />
+            </form>
 
+
+        </div>
     </div>
     <!-- <div class="logo-img">
         <img src="https://cdn.domestika.org/c_fit,dpr_auto,f_auto,t_base_params,w_820/v1618249105/content-items/007/651/207/Datovy%25CC%2581%2520zdroj%25203-original.png?1618249105"
@@ -59,6 +90,26 @@
     <footer></footer>
 
     <?php 
+        require_once 'pages/conn.php';
+        // if form submitted
+        if (isset($_POST['submit'])) {
+            // get input from form into vars
+            $checkDiscount = $_POST['checkDiscount'];
+            
+    
+            // insert user an pass into database
+            if ($_POST[$checkDiscount] == true)
+            {
+                $discountprice = $price / 100 * 90;
+                echo $discountprice;
+            }
+            $query = "INSERT INTO discounts (checkDiscount)VALUES (?)";
+            $stmt = $conn->prepare($query);
+            $stmt->execute([$discountprice]);
+
+    
+            // header('Location: login.php');
+        }
     ?>
     <script scr="js/media.js"></script>
 </body>

@@ -37,8 +37,8 @@
             <div class="box-form-login">
                 <h1>LOGIN</h1>
                 <form name="login" action="login.php" method="post">
-                    <input type="text" name="username" placeholder="Username" require_once>
-                    <input type="password" name="password" id="password" placeholder="Password" require_once>
+                    <input type="text" name="username" placeholder="Username" required autofocus>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                     <input type="submit" name="submit" value="submit" require_once>
                     <div class="box-checkbox">
                         <input type="checkbox" id="check" name="check" onclick="myFunction()">

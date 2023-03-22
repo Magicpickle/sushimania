@@ -27,7 +27,21 @@
                         </a>
                     </ul>
                 </nav> -->
-
+            <a href="login.php" class="login">
+                <svg class="user-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="m16 17a6 6 0 1 1 6-6 6 6 0 0 1 -6 6zm0-10a4 4 0 1 0 4 4 4 4 0 0 0 -4-4z"></path>
+                        <path
+                            d="m16 31a15 15 0 0 1 -11.59-5.49l-.52-.64.52-.63a15 15 0 0 1 23.18 0l.52.63-.52.64a15 15 0 0 1 -11.59 5.49zm-9.49-6.12a13 13 0 0 0 19 0 13 13 0 0 0 -19 0z">
+                        </path>
+                        <path
+                            d="m16 31a15 15 0 1 1 11.59-5.49 15 15 0 0 1 -11.59 5.49zm0-28a13 13 0 1 0 13 13 13 13 0 0 0 -13-13z">
+                        </path>
+                        <path d="m5.18 24.88s10.07 11.25 20.32 1.12l1.32-1.12s-8.56-8.88-17.25-3.55z"></path>
+                        <circle cx="16" cy="11" r="5"></circle>
+                    </g>
+                </svg>
+            </a>
         </header>
         <!-- <div class="box-text">
             <h1>A True Taste of Japanese Cuisine</h1>
@@ -37,9 +51,9 @@
             <div class="box-form-login">
                 <h1>CREATE ACCOUNT</h1>
                 <form name="register" action="register.php" method="post">
-                    <input type="email" name="email" id="email" placeholder="Example@email.com" required_once>
-                    <input type="text" name="username" placeholder="Username" required_once>
-                    <input type="password" name="password" id="password" placeholder="Password" required_once>
+                    <input type="email" name="email" id="email" placeholder="Example@email.com" required>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                     <input type="submit" name="submit" value="submit" required_once>
                     <div class="box-checkbox">
                         <input type="checkbox" id="check" name="check" onclick="myFunction()">
@@ -70,7 +84,7 @@
         $stmt = $conn->prepare($query);
         $stmt->execute([$email, $username, $password]);
 
-        echo "new record created <br>";
+        header('Location: login.php');
     }
 ?>
 <script>
