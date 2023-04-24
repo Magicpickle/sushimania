@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
+  /* filter: blur(5px); */
 }
 
 .background {
@@ -26,6 +27,7 @@ body {
   opacity: 0.8;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 header {
   height: 10rem;
@@ -34,13 +36,15 @@ header {
 }
 nav {
   display: flex;
-  flex-grow: 1;
-  justify-content: end;
+  width: 100%;
+  justify-content: center;
   align-items: center;
 }
 .logo-img {
   padding: 0.5rem;
   height: 150px;
+  position: absolute;
+  left: 0;
 }
 .logo-img img {
   height: 100%;
@@ -50,7 +54,7 @@ ul {
   gap: 1em;
   align-items: center;
   font-size: bold;
-  margin-right: 2.5vw;
+  justify-self: center;
 }
 ul button {
   height: 45px;
@@ -61,44 +65,35 @@ ul button {
   font-size: bold;
   cursor: pointer;
 }
+ul a {
+  transition: 0.3s ease-in-out;
+}
+ul a:hover {
+  color: #e74543;
+}
+.box-login {
+  position: absolute;
+  right: 2.5vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.user-svg {
+  height: 50px;
+  fill: white;
+  transition: 0.3s ease-in-out;
+}
+.user-svg:hover {
+  fill: #e74543;
+}
 
-.box-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.box-text h1 {
-  font-size: 4em;
-}
-.box-text h2 {
-  font-size: 1em;
-}
-
-.box-form-login-register {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 3rem;
-}
-.box-form-login {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
 form {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  gap: 0.5rem;
-  align-items: center;
+  position: absolute;
+  right: 2.5vw;
 }
-form input[name="username"],
-input[name="password"],
 input[name="submit"] {
   height: 30px;
-  width: 100%;
+  width: 100px;
   padding: 3px;
   border-radius: 10px;
   color: black;
@@ -108,38 +103,6 @@ input[name="submit"] {
   transition: 0.3s ease-in-out;
 }
 input[name="submit"]:hover {
-  background-color: #e74543;
-  cursor: pointer;
-  color: white;
-}
-.box-checkbox {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: #e74543;
-}
-.register {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.register input[name="register"] {
-  height: 30px;
-  width: 100%;
-  padding: 3px;
-  border-radius: 10px;
-  color: black;
-  box-sizing: border-box;
-  border: none transparent;
-  outline: none;
-  transition: 0.3s ease-in-out;
-}
-input[name="register"]:hover {
   background-color: #e74543;
   cursor: pointer;
   color: white;

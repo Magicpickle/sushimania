@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>login</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" type="image" href="../img/sushi-logo-favicon.png">
 </head>
 
 <body>
@@ -62,13 +63,17 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $stmt = $conn->prepare("SELECT username, password FROM users WHERE username=:username AND password=:password");
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username=:username AND password=:password");
         $stmt->execute(['username' => $username, 'password' => $password]);
         $user = $stmt->fetch();
 
-        if ($user != false) {
-            echo "login succes <br>";
+        if ($user != false ) {
+            session_start();
+            $_SESSION['rol'] = $user['rol'];
+            $_SESSION['username'] = $user['username'];
+            // echo "login succes <br>";
             echo "welcome " .$user['username'] . "! <br> password: " . $user['password'] . "<br>";
+            header ("location: ../index.php");
         } else {
             echo "account does not exist.. <br>";
         }

@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-weight: 600;
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  font-family: "Karla", sans-serif;
+  /* filter: blur(5px); */
+}
+
+.background {
+  background-image: url("../img/sushi1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+}
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  padding: 0.5rem;
+  height: 150px;
+  position: absolute;
+  left: 0;
+}
+.logo-img img {
+  height: 100%;
+}
+
+ul {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  font-size: bold;
+  margin-right: 2.5vw;
+}
+ul button {
+  height: 45px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e74543;
+  font-size: bold;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+.button-group button {
+  height: 45px;
+  width: 120px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  font-size: bold;
+  transition: 0.3s ease-in-out;
+}
+.button-group button p {
+  color: black;
+}
+.button-group button:hover {
+  transform: scale(1.1);
+  background-color: #e74543;
+  cursor: pointer;
+  color: white;
+}
+
+footer {
+  justify-self: flex-end;
+  background-color: grey;
+  height: 150px;
+  width: 100vw;
+}

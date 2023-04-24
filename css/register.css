@@ -146,7 +146,7 @@ input[type="checkbox"] {
   box-sizing: border-box;
   border: none transparent;
   outline: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 input[name="register"]:hover {
   background-color: #e74543;
