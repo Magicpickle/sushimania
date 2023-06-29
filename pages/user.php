@@ -35,7 +35,6 @@ require_once 'conn.php';
                     if($_SESSION['rol'] <= 3)
                     {
                         echo '<li><a class="owner" href="manager.php">MANAGE</a></li>';
-                        echo '<li><a class="owner" href="menu-items.php">MENU ITEMS</a></li>';
                     }
                     ?>
                 </ul>

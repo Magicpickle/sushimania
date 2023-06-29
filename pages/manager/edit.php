@@ -1,9 +1,9 @@
 <?php
-require_once 'conn.php';
+require_once '../conn.php';
 session_start();
 if($_SESSION['rol'] > 3)
 {
-    header ("location: ../index.php");
+    header ("location: ../../index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -14,15 +14,15 @@ if($_SESSION['rol'] > 3)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>manage</title>
-    <link rel="stylesheet" href="../css/manager.css">
-    <link rel="icon" type="image" href="../img/sushi-logo-favicon.png">
+    <link rel="stylesheet" href="../../css/manager.css">
+    <link rel="icon" type="image" href="../../img/sushi-logo-favicon.png">
 </head>
 
 <body>
     <div class="background">
         <header>
-            <a class="logo-img header" href="../index.php">
-                <img src="../img/Sushi-Logo.png" alt="">
+            <a class="logo-img header" href="../../index.php">
+                <img src="../../img/Sushi-Logo.png" alt="">
             </a>
             <!-- <nav>
                     <ul>
@@ -40,17 +40,17 @@ if($_SESSION['rol'] > 3)
         </header>
 
         <div class="button-group">
-            <a href="manager/add.php">
+            <a href="add.php">
                 <button>
                     <p>Add</p>
                 </button>
             </a>
-            <a href="manager/edit.php">
+            <a href="edit.php">
                 <button>
                     <p>Edit</p>
                 </button>
             </a>
-            <a href="manager/delete.php">
+            <a href="delete.php">
                 <button>
                     <p>Delete</p>
                 </button>
