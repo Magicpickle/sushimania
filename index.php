@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once 'pages/conn.php';
 ?>
@@ -27,23 +27,21 @@ require_once 'pages/conn.php';
                     <li><a href="#">RESERVATIONS</a></li>
                     <li><a href="#">CONTACT</a></li>
 
-                    <a href="https://www.bol.com/nl/nl/p/realistische-dildo-met-zuignap-dildo-met-sterke-zuignap-ook-voor-anaal-gebruik-20-cm/9200000117546316/?s2a=&bltgh=pxgGY68y0u8X6l-zWYFCiQ.2_53_54.55.FeatureOption#productTitle"
-                        target="_blank">
+                    <a href="https://www.bol.com/nl/nl/p/realistische-dildo-met-zuignap-dildo-met-sterke-zuignap-ook-voor-anaal-gebruik-20-cm/9200000117546316/?s2a=&bltgh=pxgGY68y0u8X6l-zWYFCiQ.2_53_54.55.FeatureOption#productTitle" target="_blank">
                         <button>ORDER</button>
                     </a>
-                    <?php 
+                    <?php
                     // if (isset($_SESSION[ 'username']))
                     // {
                     //     echo '<li><a class="owner" href="pages/manager.php">MANAGE</a></li>';
                     //     echo '<li><a class="owner" href="pages/menu-items.php">MENU ITEMS</a></li>';
                     // }
-                
+
                     ?>
                 </ul>
                 <div class="box-login">
-                    <?php 
-                    if (isset($_SESSION['username']))
-                    { 
+                    <?php
+                    if (isset($_SESSION['username'])) {
                         echo '<a href="pages/user.php" class="user">
                         <svg class="user-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <g>
@@ -62,9 +60,7 @@ require_once 'pages/conn.php';
                     </a>';
                         echo '<p>Hello!, ' . $_SESSION['username'];
                         echo '</p>';
-                    }
-                    else 
-                    {
+                    } else {
                         echo '<a href="pages/login.php" class="login">
 
                         <svg class="user-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +99,7 @@ require_once 'pages/conn.php';
         </div>
         <p class="text-discounts">*Login to get your discount</p>
         <div class="blackbox">
-            <div class="item1 items">
+            <!-- <div class="item1 items">
                 <div class="img">
                     <img src="img/item-3-img.jpg" alt="">
                 </div>
@@ -120,7 +116,25 @@ require_once 'pages/conn.php';
                     <img src="img/item-1-img.jpg" alt="">
                 </div>
                 <p>PUMPKIN CROQUETTES (3 PCS)</p>
-            </div>
+            </div> -->
+
+            <?php
+            $stmt = $conn->query("SELECT title, info, price FROM products ");
+
+
+            while ($row = $stmt->fetch()) {  ?>
+                <div class="box">
+                    <div class="tinybox">
+                        <div class="title"> <?php echo $row['title']; ?></div>
+                        <div class="info"><?php echo $row['info']; ?></div>
+                    </div>
+                    <div class="price"><?php echo $row['price'] ?>$</div>
+                </div>
+
+            <?php }; ?>
+
+
+
             <!-- <form name="discount" action="index.php" method="post">
                 <input type="checkbox" name="checkDiscount" value="false" />
                 <input type="submit" name="form-submit" value="Submit" />
@@ -135,7 +149,7 @@ require_once 'pages/conn.php';
     </div> -->
     <footer></footer>
 
-    <?php 
+    <?php
     // $stmt = $conn->prepare("SELECT username, password FROM users WHERE username=:username AND password=:password");
     // $stmt->execute(['username' => $username, 'password' => $password]);
     // $user = $stmt->fetch();

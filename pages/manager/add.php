@@ -5,59 +5,61 @@ if($_SESSION['rol'] > 3)
 {
     header ("location: ../../index.php");
 }
+
+
+if(isset($_POST['submit'])){
+    
+
+    $sql = "INSERT INTO products(title, info, price)
+    VALUES (:title, :info, :price)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":title", $_POST['title']);
+    $stmt->bindParam(":info", $_POST['info']);
+    $stmt->bindParam(":price", $_POST['price']);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    header('Location: ../manager.php'); 
+};
+
+
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>manage</title>
-    <link rel="stylesheet" href="../../css/manager.css">
-    <link rel="icon" type="image" href="../../img/sushi-logo-favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/submit.css">
+    <!-- <link rel="icon" type="image/x-icon" href="img/icon.png">     -->
+    <title>016 | Submit</title>
 </head>
-
 <body>
-    <div class="background">
-        <header>
-            <a class="logo-img header" href="../../index.php">
-                <img src="../../img/Sushi-Logo.png" alt="">
-            </a>
-            <!-- <nav>
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">RESERVATIONS</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <a href="https://www.bol.com/nl/nl/p/realistische-dildo-met-zuignap-dildo-met-sterke-zuignap-ook-voor-anaal-gebruik-20-cm/9200000117546316/?s2a=&bltgh=pxgGY68y0u8X6l-zWYFCiQ.2_53_54.55.FeatureOption#productTitle"
-                            target="_blank">
-                            <button>ORDER</button>
-                        </a>
-                    </ul>
-                </nav> -->
 
-        </header>
+    <div class="flex">
+    <div class="submit-box">
+        <form action="#" method="POST">
 
-        <div class="button-group">
-            <a href="add.php">
-                <button>
-                    <p>Add</p>
-                </button>
-            </a>
-            <a href="edit.php">
-                <button>
-                    <p>Edit</p>
-                </button>
-            </a>
-            <a href="delete.php">
-                <button>
-                    <p>Delete</p>
-                </button>
-            </a>
-        </div>
+            <label>Title</label>
+            <input required type="text" name="title" placeholder="Title">
+            <label>Info</label>
+            <input required type="text" name="info" placeholder="Info">
+            <label>price</label>
+            <input required type="number" name="price" placeholder="1">
 
+            <input class="sub" type="submit" value="Submit " name="submit">
+        </form>
+        <a href="../manager.php">Terug</a>
     </div>
+    </div>
+    <?php 
+    
+    // echo $id;
+    
+    ?>
 </body>
-
 </html>

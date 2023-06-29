@@ -16,7 +16,6 @@ body {
   justify-content: space-between;
   overflow-x: hidden;
   font-family: "Karla", sans-serif;
-  /* filter: blur(5px); */
 }
 
 .background {
@@ -63,24 +62,16 @@ ul button {
   background-color: #e74543;
   font-size: bold;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
 }
-ul button:hover{
-  transform: scale(1.1);
-}
-
 ul a {
   transition: 0.3s ease-in-out;
 }
 ul a:hover {
   color: #e74543;
 }
-.box-login {
+.user {
   position: absolute;
   right: 2.5vw;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
 }
 .user-svg {
   height: 50px;
@@ -89,19 +80,6 @@ ul a:hover {
 }
 .user-svg:hover {
   fill: #e74543;
-}
-
-.box-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-.box-text h1 {
-  font-size: 4em;
-}
-.box-text h2 {
-  font-size: 1em;
 }
 
 .discounts {
@@ -135,23 +113,8 @@ ul a:hover {
   border-radius: 20px;
   padding: 20px;
   display: flex;
-  gap: 5em;
-}
-.box{
-  display: flex;
-  flex-direction: column;
-  /* gap: 1em; */
   justify-content: space-between;
-  background-color: #e74543;
-  width: 200px;
-  height: 300px;
-  padding: 10px;
-  border-radius: 5px;
-}
-.tinybox{
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  align-items: center;
 }
 .items {
   width: 30%;
