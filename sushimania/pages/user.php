@@ -27,10 +27,7 @@ require_once 'conn.php';
                     <li><a href="#">RESERVATIONS</a></li>
                     <li><a href="#">CONTACT</a></li>
 
-                    <!-- <a href="https://www.bol.com/nl/nl/p/realistische-dildo-met-zuignap-dildo-met-sterke-zuignap-ook-voor-anaal-gebruik-20-cm/9200000117546316/?s2a=&bltgh=pxgGY68y0u8X6l-zWYFCiQ.2_53_54.55.FeatureOption#productTitle"
-                        target="_blank">
-                        <button>ORDER</button>
-                    </a> -->
+                   
                     <?php 
                     if($_SESSION['rol'] <= 3)
                     {
